@@ -19,7 +19,6 @@ function HomePage() {
         <Parallax ref={parallax} pages={12} className="no-scrollbar">
           <ParallaxLayer offset={0} speed={0.1} onClick={() => scroll(1)}>
             <SectionHLS scroll={scroll} />
-            <SectionHLS scroll={scroll} />
           </ParallaxLayer>
         </Parallax>
       </div>

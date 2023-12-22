@@ -17,11 +17,10 @@ function SectionHLS({ scroll }: Props) {
           {/* Title */}
           <div className="space-y-3 md:space-y-8 mb-7 md:mb-10">
             <h1 className="text-lg md:text-2xl font-bold md:underline underline-offset-8">
-              Common display format for 360° images
+              Common Player for playing HLS Streaming Format
             </h1>
             <p>
-              There are different ways to show panoramic photos. Here&rsquo;s a
-              quick look at <b>three</b> common methods:
+              There are 2 common player for playing HLS on the web, which are
             </p>
           </div>
           {/* Content */}
@@ -30,22 +29,23 @@ function SectionHLS({ scroll }: Props) {
               {/* Description */}
               <div>
                 <h3 className="md:text-lg font-bold">
-                  1. Equirectangular Projection
+                  1. HLS.js (included in react-player)
                 </h3>
                 <p className="mt-3">
-                  The most common way to display a 360° image. The image is
-                  displayed as a rectangle, but it&rsquo;s actually a sphere.
+                  HLS.js is a JavaScript library that plays HLS in browsers with
+                  support for MSE. HLS.js is compatible with browsers supported
+                  by Shaka Player, but with the following limitations:
                 </p>
               </div>
               {/* Image Sample */}
               <div className="w-full h-[200px] relative rounded-lg">
                 <Image
-                  src="/assets/Equirectangular.jpg"
-                  alt="Equirectangular"
+                  src="/assets/hls.png"
+                  alt="HLS"
                   fill
                   priority
                   sizes="(min-width: 768px) 300px, 100vw"
-                  className="object-cover rounded-lg"
+                  className="rounded-lg object-contain"
                 />
               </div>
             </div>
@@ -54,18 +54,19 @@ function SectionHLS({ scroll }: Props) {
               {/* Description */}
               <div>
                 <h3 className="md:text-lg font-bold">
-                  2.Cylindrical Projection
+                  2. Shaka Player (shaka-player-react)
                 </h3>
                 <p className="mt-3">
-                  This technique involves mapping images onto a cylindrical
-                  surface, usually for smartphone panoramas.
+                  Shaka Player is an open-source JavaScript library for adaptive
+                  media. It plays adaptive media formats (such as DASH and HLS)
+                  in a browser, without using plugins or Flash.
                 </p>
               </div>
               {/* Image Sample */}
-              <div className="w-full h-[84px] md:h-[145px] relative rounded-lg">
+              <div className="w-full h-[200px] relative rounded-lg">
                 <Image
-                  src="/assets/Panorama.jpg"
-                  alt="Panorama"
+                  src="/assets/shaka-player.png"
+                  alt="Shaka Player"
                   fill
                   priority
                   sizes="(min-width: 768px) 300px, 100vw"
