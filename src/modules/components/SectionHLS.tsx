@@ -85,38 +85,14 @@ function SectionHLS({ scroll }: Props) {
               {/* Description */}
               <div>
                 <h3 className="md:text-lg font-bold">
-                  3. Little Planet Effect
+                  1. HLS.js (included in react-player)
                 </h3>
                 <p className="mt-3">
-                  This style renders panoramic images with a{" "}
-                  <b>&quot;Little Planet&quot;</b> or{" "}
-                  <b>&quot;Tiny Planet&quot;</b> appearance, adding a whimsical
-                  twist to panoramic photography.
+                  Below are example video using react-player when playing HLS
                 </p>
               </div>
               {/* Image Sample */}
-              <div className="md:w-[400px] md:h-[400px] w-full h-auto aspect-square relative rounded-lg">
-                <Image
-                  src="/assets/LittlePlanet.jpg"
-                  alt="LittlePlanet"
-                  fill
-                  priority
-                  sizes="(min-width: 768px) 300px, 100vw"
-                  className="object-cover rounded-lg"
-                />
-              </div>
-            </div>
-            <div className="flex-1 hidden md:flex items-center pt-20">
-              <div className="w-[200px] h-[200px] rounded-full relative">
-                <Image
-                  src="/assets/small-meme.gif"
-                  alt="small meme"
-                  fill
-                  priority
-                  sizes="(min-width: 768px) 300px, 100vw"
-                  className="rounded-full object-cover"
-                />
-              </div>
+              <div className="md:w-[400px] md:h-[400px] w-full h-auto aspect-square relative rounded-lg"></div>
             </div>
           </div>
         </SectionLayout>
