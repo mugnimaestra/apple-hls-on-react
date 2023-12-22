@@ -4,6 +4,7 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import Image from "next/image";
 import React from "react";
 import SectionLayout from "./SectionLayout";
+import ReactPlayer from "../react-player/ReactPlayer";
 
 type Props = {
   scroll: (to: number) => void;
@@ -77,7 +78,7 @@ function SectionHLS({ scroll }: Props) {
           </div>
         </SectionLayout>
       </ParallaxLayer>
-      <ParallaxLayer offset={1} speed={0.2} onClick={() => scroll(2)}>
+      <ParallaxLayer className="mt-[200px]" offset={1} speed={0.2}>
         <SectionLayout>
           {/* Content */}
           <div className="flex flex-col md:flex-row md:space-x-5 md:space-y-0 space-y-5 w-full">
@@ -88,10 +89,35 @@ function SectionHLS({ scroll }: Props) {
                   1. HLS.js (included in react-player)
                 </h3>
                 <p className="mt-3">
-                  Below are example video using react-player when playing HLS
+                  Below are example video using react-player when playing HLS,
+                  it is
                 </p>
+                <ol className="list-decimal list">
+                  <li className="ml-6 text-md font-medium">
+                    {`Simple and native player using <video /> element tag`}
+                  </li>
+                  <li className="ml-6 text-md font-medium">
+                    Widely supported on most browsers{" "}
+                  </li>
+                </ol>
               </div>
               {/* Image Sample */}
+              <div className="flex">
+                <div className="flex-1"></div>
+                <div className="flex-[4]">
+                  <ReactPlayer
+                    playing={true}
+                    light="https://douglasgreen.com/wp-content/uploads/2014/03/video-play-btn-featured.png"
+                    url="https://mikiya-anime.s3.ap-southeast-1.amazonaws.com/room-tour/japanese-apartment/My+%24300+Japanese+Apartment+Tour%F0%9F%87%AF%F0%9F%87%B5%EF%BD%9C+Living+in+Japan+%EF%BD%9C+Old%2C+cozy%2C+simple+%5Br2Cg_hhDXNk%5D.m3u8"
+                  />
+                  <p className="text-sm text-center font-medium">
+                    Source:
+                    <a target="_blank">https://youtu.be/r2Cg_hhDXNk</a>
+                  </p>
+                </div>
+                <div className="flex-1"></div>
+              </div>
+
               <div className="md:w-[400px] md:h-[400px] w-full h-auto aspect-square relative rounded-lg"></div>
             </div>
           </div>

@@ -11,7 +11,7 @@ interface ReactPlayerProps extends LibReactPlayerProps {
   className?: string;
 }
 
-const HLSReactPlayer: React.FC<ReactPlayerProps> = ({
+const ReactPlayer: React.FC<ReactPlayerProps> = ({
   url,
   className,
   ...rest
@@ -19,6 +19,8 @@ const HLSReactPlayer: React.FC<ReactPlayerProps> = ({
   const [isClient, setIsClient] = React.useState(false);
   const config: Config = {
     file: {
+      forceHLS: true,
+      forceSafariHLS: true,
       attributes: {
         controlslist: "nodownload", // Disable download button
       },
@@ -33,8 +35,8 @@ const HLSReactPlayer: React.FC<ReactPlayerProps> = ({
 
   return (
     <div
-      data-testid="ReactPlayer"
-      className="player-wrapper aspect-h-9 aspect-w-16 relative h-full w-full"
+      data-testid="HLSReactPlayer"
+      className="player-wrapper aspect-video relative h-full w-full"
     >
       <LibReactPlayer
         className="absolute left-0 top-0"
@@ -49,4 +51,4 @@ const HLSReactPlayer: React.FC<ReactPlayerProps> = ({
   );
 };
 
-export default HLSReactPlayer;
+export default ReactPlayer;
