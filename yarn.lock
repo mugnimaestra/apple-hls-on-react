@@ -798,7 +798,9 @@ __metadata:
     autoprefixer: "npm:^10.0.1"
     eslint: "npm:^8"
     eslint-config-next: "npm:14.0.4"
+    hls.js: "npm:^1.4.14"
     next: "npm:14.0.4"
+    plyr-react: "npm:^5.3.0"
     postcss: "npm:^8"
     react: "npm:^18"
     react-dom: "npm:^18"
@@ -1238,6 +1240,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:^3.26.1":
+  version: 3.34.0
+  resolution: "core-js@npm:3.34.0"
+  checksum: 408a77898abe03bf3e5dec2a451c36f4745081cca9022f8bdf9b817d57bb6d3a534d555f47a4b95e1daa5e21dbc79122eac2402e25720d425f5925127e55dcd8
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
@@ -1282,6 +1291,13 @@ __metadata:
   version: 3.1.3
   resolution: "csstype@npm:3.1.3"
   checksum: 80c089d6f7e0c5b2bd83cf0539ab41474198579584fa10d86d0cafe0642202343cbc119e076a0b1aece191989477081415d66c9fefbf3c957fc2fc4b7009f248
+  languageName: node
+  linkType: hard
+
+"custom-event-polyfill@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "custom-event-polyfill@npm:1.0.7"
+  checksum: b73c90d646d78f4acdff5453fa0f165f6d5506e32d074ca57d27f2bb7d9412356dab8cec7c00a0956b069e4987a8546a2c2c4b866d155e9fc4c27d223a225b78
   languageName: node
   linkType: hard
 
@@ -2349,6 +2365,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hls.js@npm:^1.4.14":
+  version: 1.4.14
+  resolution: "hls.js@npm:1.4.14"
+  checksum: a0d6843d61b0e28b0ebb5902937930764bd159c00ab1e7ec624ab511fe12c47ab02be13b3970d6e30d3079ad482ba64a531aa6530026a4f07d8b0f446dba532c
+  languageName: node
+  linkType: hard
+
 "htmlparser2@npm:^8.0.1":
   version: 8.0.2
   resolution: "htmlparser2@npm:8.0.2"
@@ -2929,6 +2952,13 @@ __metadata:
   version: 1.0.0
   resolution: "load-script@npm:1.0.0"
   checksum: 9919c777fe83f8a3a917f65c9c3ab186ad8b194248c57f413ef6e610194abc8484d123a6838d77ab33e5fa1a05a676b5dfe779c38cfe602bdd27c239423d0acd
+  languageName: node
+  linkType: hard
+
+"loadjs@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "loadjs@npm:4.2.0"
+  checksum: da0dff873148ca0507e84fd5b975f95a015f1cc30552df1958b6f47c9c0e134f29df5cc88db3fed72faade725ce3954378365bd0df2092117e432df430fa4c97
   languageName: node
   linkType: hard
 
@@ -3574,6 +3604,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"plyr-react@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "plyr-react@npm:5.3.0"
+  dependencies:
+    plyr: "npm:^3.7.7"
+    react-aptor: "npm:^2.0.0"
+  peerDependencies:
+    plyr: ^3.7.7
+    react: ">=16.8"
+  peerDependenciesMeta:
+    plyr:
+      optional: false
+    react:
+      optional: true
+  checksum: b338c5f07277c124663aa4f820dffb0700a67ac6eab0015b77985bb70c308da96bdffff6d103033544de6516cade63027f4c077871a0fa0feba996dfd3b6f2c0
+  languageName: node
+  linkType: hard
+
+"plyr@npm:^3.7.7":
+  version: 3.7.8
+  resolution: "plyr@npm:3.7.8"
+  dependencies:
+    core-js: "npm:^3.26.1"
+    custom-event-polyfill: "npm:^1.0.7"
+    loadjs: "npm:^4.2.0"
+    rangetouch: "npm:^2.0.1"
+    url-polyfill: "npm:^1.1.12"
+  checksum: 75c3e070f7829f76409e0d34784bf8070b827ad99c4713a36338af7ce8dff7cf38998403f34a4a0b4d6e99efd1856ee056443c7e838db1dbb98ed38828110a97
+  languageName: node
+  linkType: hard
+
 "postcss-import@npm:^15.1.0":
   version: 15.1.0
   resolution: "postcss-import@npm:15.1.0"
@@ -3712,6 +3773,25 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 900a93d3cdae3acd7d16f642c29a642aea32c2026446151f0778c62ac089d4b8e6c986811076e1ae180a694cedf077d453a11b58ff0a865629a4f82ab558e102
+  languageName: node
+  linkType: hard
+
+"rangetouch@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "rangetouch@npm:2.0.1"
+  checksum: 5f7947d1c5e95f50630ed1e0cbaeb4c32a6be37b66d864a68f7e70a4e86f782eb869df9fa2357b981b1301d2158eff50002a199b0fbbbf6e1746bc9d213914d9
+  languageName: node
+  linkType: hard
+
+"react-aptor@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "react-aptor@npm:2.0.0"
+  peerDependencies:
+    react: ">=16.8"
+  peerDependenciesMeta:
+    react:
+      optional: true
+  checksum: f2f00b494a2cb93b0ee73949d2031c2f5a8233d169c3d16792e7c6a5177a75310155e85282209a6f74883b3564d1f3a46d5d4d03ee1c16224fbdb5d5665504f8
   languageName: node
   linkType: hard
 
@@ -4605,6 +4685,13 @@ __metadata:
   dependencies:
     punycode: "npm:^2.1.0"
   checksum: 4ef57b45aa820d7ac6496e9208559986c665e49447cb072744c13b66925a362d96dd5a46c4530a6b8e203e5db5fe849369444440cb22ecfc26c679359e5dfa3c
+  languageName: node
+  linkType: hard
+
+"url-polyfill@npm:^1.1.12":
+  version: 1.1.12
+  resolution: "url-polyfill@npm:1.1.12"
+  checksum: 69633c42e3182271d01d2f2f4acd889a9f54b88fd7b2f45fd84fed19eca7cfa98fb6bfbd43d9cd9fad222a11a2dffb562b8435cdaa67fca5e25e3da638741679
   languageName: node
   linkType: hard
 

@@ -16,10 +16,10 @@ function HomePage() {
     <main className="flex justify-center w-full h-full">
       <div className="w-full">
         {/* Content */}
-        <Parallax ref={parallax} pages={12} className="no-scrollbar">
-          <ParallaxLayer offset={0} speed={0.1} onClick={() => scroll(1)}>
-            <SectionHLS scroll={scroll} />
-          </ParallaxLayer>
+        <Parallax ref={parallax} pages={3}>
+          {/* <ParallaxLayer offset={0} speed={0.1} onClick={() => scroll(1)}> */}
+          <SectionHLS scroll={scroll} />
+          {/* </ParallaxLayer> */}
         </Parallax>
       </div>
     </main>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import React from "react";
 import SectionLayout from "./SectionLayout";
 import ReactPlayer from "../react-player/ReactPlayer";
+import PlyrComponent from "../plyr-react/PlyrComponent";
 
 type Props = {
   scroll: (to: number) => void;
@@ -13,7 +14,7 @@ type Props = {
 function SectionHLS({ scroll }: Props) {
   return (
     <>
-      <ParallaxLayer offset={0} speed={0.1} onClick={() => scroll(1)}>
+      <ParallaxLayer offset={0} speed={0.1}>
         <SectionLayout>
           {/* Title */}
           <div className="space-y-3 md:space-y-8 mb-7 md:mb-10">
@@ -75,10 +76,35 @@ function SectionHLS({ scroll }: Props) {
                 />
               </div>
             </div>
+
+            <div className="flex flex-col gap-3 md:gap-5 flex-1">
+              {/* Description */}
+              <div>
+                <h3 className="md:text-lg font-bold">3. Plyr (plyr-react)</h3>
+                <p className="mt-3">
+                  Plyr is a simple, lightweight, accessible and customizable
+                  HTML5, YouTube and Vimeo media player that supports modern
+                  browsers.
+                </p>
+              </div>
+              {/* Image Sample */}
+              <div className="w-full h-[200px] relative rounded-lg">
+                <Image
+                  src="/assets/plyr-react.png"
+                  alt="Plyr React"
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 300px, 100vw"
+                  className="object-contain rounded-lg"
+                />
+              </div>
+            </div>
           </div>
         </SectionLayout>
       </ParallaxLayer>
-      <ParallaxLayer className="mt-[200px]" offset={1} speed={0.2}>
+
+      {/* React Player Section */}
+      <ParallaxLayer offset={1} speed={0.2}>
         <SectionLayout>
           {/* Content */}
           <div className="flex flex-col md:flex-row md:space-x-5 md:space-y-0 space-y-5 w-full">
@@ -101,18 +127,92 @@ function SectionHLS({ scroll }: Props) {
                   </li>
                 </ol>
               </div>
-              {/* Image Sample */}
+
               <div className="flex">
                 <div className="flex-1"></div>
                 <div className="flex-[4]">
-                  <ReactPlayer
-                    playing={true}
-                    light="https://douglasgreen.com/wp-content/uploads/2014/03/video-play-btn-featured.png"
-                    url="https://mikiya-anime.s3.ap-southeast-1.amazonaws.com/room-tour/japanese-apartment/My+%24300+Japanese+Apartment+Tour%F0%9F%87%AF%F0%9F%87%B5%EF%BD%9C+Living+in+Japan+%EF%BD%9C+Old%2C+cozy%2C+simple+%5Br2Cg_hhDXNk%5D.m3u8"
-                  />
+                  <ReactPlayer url="https://mikiya-anime.s3.ap-southeast-1.amazonaws.com/spy-x-family/episode-1/SPYxFAMILY+-+Misi+01+%5BTakarir+Indonesia%5D+%5BR29FeOXqcgA%5D.m3u8" />
                   <p className="text-sm text-center font-medium">
-                    Source:
-                    <a target="_blank">https://youtu.be/r2Cg_hhDXNk</a>
+                    Source:{" "}
+                    <a
+                      href="https://youtu.be/R29FeOXqcgA"
+                      target="_blank"
+                      className="hover:underline"
+                    >
+                      https://youtu.be/R29FeOXqcgA
+                    </a>
+                  </p>
+                </div>
+                <div className="flex-1"></div>
+                <div className="flex-[4]">
+                  <ReactPlayer url="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" />
+                  <p className="text-sm text-center font-medium">
+                    Source:{" "}
+                    <a
+                      href="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+                      target="_blank"
+                      className="hover:underline"
+                    >
+                      https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
+                    </a>
+                  </p>
+                </div>
+                <div className="flex-1"></div>
+              </div>
+
+              <div className="md:w-[400px] md:h-[400px] w-full h-auto aspect-square relative rounded-lg"></div>
+            </div>
+          </div>
+        </SectionLayout>
+      </ParallaxLayer>
+      {/* Plyr React section */}
+      <ParallaxLayer offset={1} speed={0.2}>
+        <SectionLayout>
+          {/* Content */}
+          <div className="flex flex-col md:flex-row md:space-x-5 md:space-y-0 space-y-5 w-full">
+            <div className="flex flex-col w-full gap-3 md:gap-5 flex-1">
+              {/* Description */}
+              <div>
+                <h3 className="md:text-lg font-bold">3. Plyr (plyr-react)</h3>
+                <p className="mt-3">
+                  Below are example video using plyr-react when playing HLS, it
+                  is
+                </p>
+                <ol className="list-decimal list">
+                  <li className="ml-6 text-md font-medium">
+                    using hls.js under the hood, same withc react-player
+                  </li>
+                  <li>their basic UI have a quality selector</li>
+                </ol>
+              </div>
+
+              <div className="flex">
+                <div className="flex-1"></div>
+                <div className="flex-[4]">
+                  <PlyrComponent src="https://mikiya-anime.s3.ap-southeast-1.amazonaws.com/spy-x-family/episode-1/SPYxFAMILY+-+Misi+01+%5BTakarir+Indonesia%5D+%5BR29FeOXqcgA%5D.m3u8" />
+                  <p className="text-sm text-center font-medium">
+                    Source:{" "}
+                    <a
+                      href="https://youtu.be/R29FeOXqcgA"
+                      target="_blank"
+                      className="hover:underline"
+                    >
+                      https://youtu.be/R29FeOXqcgA
+                    </a>
+                  </p>
+                </div>
+                <div className="flex-1"></div>
+                <div className="flex-[4]">
+                  <PlyrComponent src="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" />
+                  <p className="text-sm text-center font-medium">
+                    Source:{" "}
+                    <a
+                      href="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+                      target="_blank"
+                      className="hover:underline"
+                    >
+                      https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
+                    </a>
                   </p>
                 </div>
                 <div className="flex-1"></div>
