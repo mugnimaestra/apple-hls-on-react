@@ -27,7 +27,6 @@ const useHls = (src: string, options: Options | null) => {
   const hls = React.useRef<Hls>(new Hls());
   const hasQuality = React.useRef<boolean>(false);
   const [plyrOptions, setPlyrOptions] = React.useState<Options | null>(options);
-  const id = React.useRef(`plyr-${Date.now()}-${Math.random()}`);
 
   React.useEffect(() => {
     hasQuality.current = false;
@@ -36,9 +35,10 @@ const useHls = (src: string, options: Options | null) => {
   React.useEffect(() => {
     hls.current.loadSource(src);
     // NOTE: although it is more reactive to use the ref, but it seems that plyr wants to use the old as lazy process
-    hls.current.attachMedia(
-      document.getElementById(id.current)! as HTMLMediaElement
-    );
+    // hls.current.attachMedia(
+    //   document.getElementById(id.current)! as HTMLMediaElement
+    // );
+    hls.current.attachMedia(document.querySelector(".plyr-react")!);
     /**
      * You can call your custom event listener here
      * For this example we iterate over the qualities and pass them to plyr player
@@ -72,7 +72,7 @@ const useHls = (src: string, options: Options | null) => {
     });
   });
 
-  return { options: plyrOptions, id: id.current };
+  return { options: plyrOptions };
 };
 
 /** `CustomPlyrInstance` is a custom React component that renders a video player using the Plyr library
@@ -83,12 +83,11 @@ const CustomPlyrInstance = React.forwardRef<
   PlyrProps & { hlsSource: string }
 >((props, ref) => {
   const { source, options = null, hlsSource } = props;
-  const { options: hlsOptions, id } = useHls(hlsSource, options);
   const raptorRef = usePlyr(ref, {
-    ...hlsOptions,
+    ...useHls(hlsSource, options),
     source,
   }) as React.MutableRefObject<HTMLVideoElement>;
-  return <video id={id} ref={raptorRef} className="plyr-react plyr" />;
+  return <video ref={raptorRef} className="plyr-react plyr" />;
 });
 
 CustomPlyrInstance.displayName = "CustomPlyrInstance";

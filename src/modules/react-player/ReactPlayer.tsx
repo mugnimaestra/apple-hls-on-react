@@ -21,9 +21,6 @@ const ReactPlayer: React.FC<ReactPlayerProps> = ({
     file: {
       forceHLS: true,
       forceSafariHLS: true,
-      attributes: {
-        controlslist: "nodownload", // Disable download button
-      },
     },
   };
 

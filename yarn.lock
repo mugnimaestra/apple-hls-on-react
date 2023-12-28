@@ -805,6 +805,7 @@ __metadata:
     react: "npm:^18"
     react-dom: "npm:^18"
     react-player: "npm:^2.14.1"
+    shaka-player: "npm:^4.7.1"
     shaka-player-react: "npm:^1.1.5"
     tailwindcss: "npm:^3.3.0"
     typescript: "npm:^5"
@@ -4152,6 +4153,15 @@ __metadata:
   dependencies:
     eme-encryption-scheme-polyfill: "npm:^2.1.1"
   checksum: 5dc8a5bb12cfe00207e1c0da24fddbc78b6b4fa62640c88e4ac04d5abde5bc63d61ace963fa440990d620a022c3cdd2ad5a376434bbbd545b3f77e63086de9fc
+  languageName: node
+  linkType: hard
+
+"shaka-player@npm:^4.7.1":
+  version: 4.7.1
+  resolution: "shaka-player@npm:4.7.1"
+  dependencies:
+    eme-encryption-scheme-polyfill: "npm:^2.1.1"
+  checksum: 7a8f181ab91aaa089d5e19f03b183f65a27d9397f40a29be193d9d14ae910ede2f2c3d2905b426e8cb5d37b0d6de0f8105030aa769cb17a19b9b73023352508e
   languageName: node
   linkType: hard
 
