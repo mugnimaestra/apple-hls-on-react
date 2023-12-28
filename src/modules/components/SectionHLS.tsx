@@ -5,16 +5,10 @@ import Image from "next/image";
 import React from "react";
 import SectionLayout from "./SectionLayout";
 import ReactPlayer from "../react-player/ReactPlayer";
-// import PlyrComponent from "../plyr-react/PlyrComponent";
-// import ShakaPlayer from "../shaka-player-react/ShakaPlayer";
 import dynamic from "next/dynamic";
 import HLSCustomReactPlayer from "../react-player/HLSCustomReactPlayer";
 
 const PlyrComponent = dynamic(() => import("../plyr-react/PlyrComponent"), {
-  ssr: false,
-});
-
-const ShakaPlayer = dynamic(() => import("../shaka-player-react/ShakaPlayer"), {
   ssr: false,
 });
 
@@ -118,7 +112,8 @@ function SectionHLS({ scroll }: Props) {
                     more dependencies
                   </li>
                   <li className="ml-6 text-md font-medium">
-                    Widely supported on most browsers{" "}
+                    Widely supported on most browsers except iOS, iOS have their
+                    own native HLS support on their browser{" "}
                   </li>
                   <li className="ml-6 text-md font-medium">
                     It can already adjust bitrate/quality based on user
@@ -130,7 +125,7 @@ function SectionHLS({ scroll }: Props) {
               </div>
 
               <div className="flex">
-                <div className="flex-1"></div>
+                <div className="flex-1 hidden md:block"></div>
                 <div className="flex-[4]">
                   <ReactPlayer url="https://mikiya-anime.s3.ap-southeast-1.amazonaws.com/spy-x-family/episode-1/SPYxFAMILY+-+Misi+01+%5BTakarir+Indonesia%5D+%5BR29FeOXqcgA%5D.m3u8" />
                   <p className="text-sm text-center font-medium">
@@ -144,7 +139,7 @@ function SectionHLS({ scroll }: Props) {
                     </a>
                   </p>
                 </div>
-                <div className="flex-1"></div>
+                <div className="flex-1 hidden md:block"></div>
               </div>
 
               <div className="md:w-[400px] md:h-[400px] w-full h-auto aspect-square relative rounded-lg"></div>
@@ -193,8 +188,9 @@ function SectionHLS({ scroll }: Props) {
               </div>
 
               <div className="flex">
-                <div className="flex-1"></div>
+                <div className="flex-1 hidden md:block"></div>
                 <div className="flex-[4]">
+                  {/* <HLSCustomReactPlayer src="https://mikiya-anime.s3.ap-southeast-1.amazonaws.com/spy-x-family/episode-1/SPYxFAMILY+-+Misi+01+%5BTakarir+Indonesia%5D+%5BR29FeOXqcgA%5D.m3u8" /> */}
                   <PlyrComponent src="https://mikiya-anime.s3.ap-southeast-1.amazonaws.com/spy-x-family/episode-1/SPYxFAMILY+-+Misi+01+%5BTakarir+Indonesia%5D+%5BR29FeOXqcgA%5D.m3u8" />
                   <p className="text-sm text-center font-medium">
                     Source:{" "}
@@ -207,9 +203,8 @@ function SectionHLS({ scroll }: Props) {
                     </a>
                   </p>
                 </div>
-                <div className="flex-1"></div>
+                <div className="flex-1 hidden md:block"></div>
               </div>
-
               <div className="md:w-[400px] md:h-[400px] w-full h-auto aspect-square relative rounded-lg"></div>
             </div>
           </div>

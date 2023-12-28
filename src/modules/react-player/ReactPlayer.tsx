@@ -17,12 +17,7 @@ const ReactPlayer: React.FC<ReactPlayerProps> = ({
   ...rest
 }) => {
   const [isClient, setIsClient] = React.useState(false);
-  const config: Config = {
-    file: {
-      forceHLS: true,
-      forceSafariHLS: true,
-    },
-  };
+  const config: Config = {};
 
   useEffect(() => {
     setIsClient(true);
